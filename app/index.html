@@ -13,7 +13,7 @@
         <d3-bars data="d3Data" label="name" on-click="d3OnClick(item)"></d3-bars>
            <header>
                <h1>{{movie.title}}</h1>
-               <h2>{{movie.revenue}}</h2>
+               <h2>{{movie.amount}}</h2>
                <h2>{{movie.releaseDate}}</h2>
                <h3>{{movie.ranking}}</h3>
            </header>
@@ -21,13 +21,12 @@
        </section>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/services/d3.js"></script>
     <script src="scripts/controllers/demoCtrl.js"></script>
     <script src="scripts/controllers/demoCtrl2.js"></script>
     <script src="scripts/directives/d3Basic.js"></script>
-    <script src="scripts/directives/jquery.colorbox-min.js"></script>
 
   </body>
 </html>
