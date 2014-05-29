@@ -1,24 +1,22 @@
 <!doctype html>
   <head>
     <meta charset="utf-8">
-    <title>d3 and Angular</title>
+    <title>EW's 30 Best Summer Blockbusters of All Time</title>
     <meta name="description" content="d3 and Angular">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico" />
   </head>
   <body ng-app="myApp">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">Resize the page or change the numbers to see the d3 re-render!</div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3"><hr></div>
-    </div>
     <div class="row">
       <div class="col-md-6 col-md-offset-3" ng-controller="DemoCtrl">
         <span>{{title}}</span>
         <d3-bars data="d3Data" label="name" on-click="d3OnClick(item)"></d3-bars>
-           <h1>{{movie.title}}</h1>
-           <h2>{{movie.revenue}} Million - {{movie.releaseDate}}</h2>
-           <h3>{{movie.ranking}}</h3>
+           <header>
+               <h1>{{movie.title}}</h1>
+               <h2>{{movie.revenue}}</h2>
+               <h2>{{movie.releaseDate}}</h2>
+               <h3>{{movie.ranking}}</h3>
+           </header>
            <p>{{movie.quote}}</p>
        </section>
     </div>
@@ -29,6 +27,7 @@
     <script src="scripts/controllers/demoCtrl.js"></script>
     <script src="scripts/controllers/demoCtrl2.js"></script>
     <script src="scripts/directives/d3Basic.js"></script>
+    <script src="scripts/directives/jquery.colorbox-min.js"></script>
 
   </body>
 </html>

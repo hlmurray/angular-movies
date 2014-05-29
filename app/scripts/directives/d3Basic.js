@@ -38,9 +38,9 @@
 
             // setup variables
             var width, height, max;
-            width = d3.select(iElement[0])[0][0].offsetWidth - 20;
+            width = d3.select(iElement[0])[0][0].offsetWidth;
               // 20 is for margins and can be changed
-            height = 250;
+            height = 350;
               // 35 = 30(bar height) + 5(margin between bars)
             max = 1500;
               // this can also be found dynamically when the data is not static
@@ -71,7 +71,7 @@
                     return y(d.revenue);
                 }) // height + margin between bars
                 .transition()
-                  .duration(1000) // time of duration
+                  .duration(2000) // time of duration
                   .attr("height", function(d){
                     return height - y(d.revenue);
                   }); // width based on scale
@@ -79,14 +79,14 @@
             svg.selectAll("text")
               .data(data)
               .enter()
-                .append("text")
                 .on("click", function(d, i){return scope.onClick({item: d});})
                 .attr("fill", "white")
-                .attr("y", function(d, i){
-                    return y(d.revenue) ;
+                .attr("font-size", "12px")
+                .attr("y", function(d){
+                    return y(d.revenue);
                 }    )
                 .attr("x", function(d, i){
-                  return (width / data.length) * i;
+                  return i * (width / data.length) + 5;
                 })
                 .attr("transform", function(d, i) {
                      return "rotate(90 "+((width / data.length) * i)+","+y(d.revenue)+")";
